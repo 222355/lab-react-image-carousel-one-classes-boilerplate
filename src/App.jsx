@@ -8,6 +8,7 @@ export default class App extends Component {
   render() {
     return (
       <div className="App">
+        <hi>jij</hi>
         <Carousel />
       </div>
     );
