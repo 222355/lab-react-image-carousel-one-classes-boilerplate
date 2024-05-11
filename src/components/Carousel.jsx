@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./Carousel.css";
-import { title } from "../data/CarouselData";
-import { images } from "../data/CarouselData";
+import {images} from "../data/CarouselData";
 // you can explore more - and check as how to use materiul ui
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos'
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
@@ -12,13 +11,11 @@ class Carousel extends Component {
         super(props);
         this.state={
             index:0,
-            title,
         };
 
     }
   render(){
     const {index}=this.state
-    const currentImg=images[index]
     const nextSlide=()=>{
         this.setState((prevState)=>({
             index: prevState.index=== images.length-1?0: prevState.index + 1,
@@ -30,22 +27,24 @@ class Carousel extends Component {
         }))
     }
     return(
-        <>
+        <React.Fragment>
         <div className="carousel">
             <div className="arrow" onClick={prevSlide}>
+
                 <ArrowBackIosIcon></ArrowBackIosIcon>
             </div>
-            <div className="heading">
-                <h1>{title}</h1>
-
+            
+            <div className="face-container" style={{backgroundImage:`url(${images[this.state.index].img})`}}>
+                <h1>{images[this.state.index].title}</h1>
+                <p>{images[this.state.index].subtitle}</p>
             </div>
-            <img src={currentImg} alt="carousel"/>
+           
             <div className="arrow" onClick={nextSlide}>
                 <ArrowForwardIosIcon></ArrowForwardIosIcon>
             </div>
 
         </div>
-        </>
+        </React.Fragment>
     );
   }
 }
