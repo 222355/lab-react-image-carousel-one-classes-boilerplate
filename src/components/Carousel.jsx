@@ -33,12 +33,10 @@ class Carousel extends Component {
 
                 <ArrowBackIosIcon></ArrowBackIosIcon>
             </div>
-            
             <div className="face-container" style={{backgroundImage:`url(${images[this.state.index].img})`}}>
                 <h1>{images[this.state.index].title}</h1>
                 <p>{images[this.state.index].subtitle}</p>
             </div>
-           
             <div className="arrow" onClick={nextSlide}>
                 <ArrowForwardIosIcon></ArrowForwardIosIcon>
             </div>
@@ -48,5 +46,6 @@ class Carousel extends Component {
     );
   }
 }
+
 
 export default Carousel;
