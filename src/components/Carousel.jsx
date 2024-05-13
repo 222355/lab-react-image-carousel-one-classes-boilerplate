@@ -12,7 +12,6 @@ class Carousel extends Component {
         this.state={
             index:0,
         };
-
     }
   render(){
     const {index}=this.state
@@ -30,7 +29,6 @@ class Carousel extends Component {
         <React.Fragment>
         <div className="carousel">
             <div className="arrow" onClick={prevSlide}>
-
                 <ArrowBackIosIcon></ArrowBackIosIcon>
             </div>
             <div className="face-container" style={{backgroundImage:`url(${images[this.state.index].img})`}}>
